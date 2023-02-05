@@ -1,6 +1,4 @@
-import 'styled-components'
-
-type SizeProps = {
+export type SizeProps = {
   xs: string
   sm: string
   base: string
@@ -16,7 +14,7 @@ type SizeProps = {
   '9xl': string
 }
 
-type SpacingProps = {
+export type SpacingProps = {
   xs: string
   sm: string
   base: string
@@ -25,7 +23,7 @@ type SpacingProps = {
   '2xl': string
 }
 
-type ColorsProps = {
+export type ColorsProps = {
   primary: string
   secondary: string
   tertiary: string
@@ -35,14 +33,4 @@ type ColorsProps = {
   success: string
   info: string
   warning: string
-}
-
-declare module 'styled-components' {
-  export interface DefaultTheme {
-    common: {
-      size: SizeProps
-      spacing: SpacingProps
-    }
-    colors: ColorsProps
-  }
 }

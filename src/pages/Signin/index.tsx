@@ -6,7 +6,7 @@ export function SignIn() {
   return (
     <S.Container>
       <S.Content>
-        <Header />
+        <Header iconSize={18} />
       </S.Content>
     </S.Container>
   )

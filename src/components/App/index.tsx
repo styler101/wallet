@@ -1,13 +1,11 @@
 import React from 'react'
 import GlobalStyles from '@/assets/styles/global'
 
-function App() {
+export function App() {
   return (
     <React.Fragment>
-      <h1> Teste</h1>
+      <h1> Teste Import</h1>
       <GlobalStyles />
     </React.Fragment>
   )
 }
-
-export default App

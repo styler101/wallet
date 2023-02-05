@@ -24,6 +24,7 @@
       "@typescript-eslint/triple-slash-reference": "off",
       "@typescript-eslint/space-before-function-paren": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
-      "no-undef": "off"
+      "no-undef": "off",
+      "@typescript-eslint/indent": "off"
     }
 }

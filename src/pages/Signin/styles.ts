@@ -36,3 +36,12 @@ export const Form = styled.form`
     padding-bottom: 0.25rem;
   }
 `
+
+export const FormFields = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: ${({ theme }) => theme.common.spacing.lg} 0;
+`

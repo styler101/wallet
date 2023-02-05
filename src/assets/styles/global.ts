@@ -7,9 +7,10 @@ export default createGlobalStyle`
   margin:0;
   outline:0;
   box-sizing: border-box;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
  }
 
- html, body,#app{
+ html, body,#root{
   height:100%;
   background-color: ${(props) => props.theme.colors.primary}
  }
@@ -17,10 +18,6 @@ export default createGlobalStyle`
 
  button{
   cursor: pointer;
- }
-
- h1, h2, h3, h4, h5, h6{
-  font-size:2.5rem;
  }
 
  a{

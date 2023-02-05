@@ -6,10 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
 
   label {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors?.white};
     font-weight: 400;
     opacity: 0.7;
-    margin-bottom: ${({ theme }) => theme.common.spacing.sm};
+    margin-bottom: ${({ theme }) => theme.common?.spacing?.sm};
   }
   div {
     width: 100%;
@@ -18,15 +18,15 @@ export const Container = styled.div`
       width: 100%;
       flex-grow: 1;
       height: 2.625rem;
-      padding-left: ${({ theme }) => theme.common.spacing?.xl};
-      border-radius: ${({ theme }) => theme.common.spacing?.xs};
+      padding-left: ${({ theme }) => theme.common?.spacing?.xl};
+      border-radius: ${({ theme }) => theme.common?.spacing?.xs};
       border: 1px solid #ccc;
-      font-size: ${({ theme }) => theme.common.size?.sm};
+      font-size: ${({ theme }) => theme.common?.size?.sm};
       color: ${({ theme }) => theme.colors?.gray};
 
       &::placeholder {
         color: ${({ theme }) => theme.colors?.gray};
-        font-size: ${({ theme }) => theme.common.size?.sm};
+        font-size: ${({ theme }) => theme.common?.size.sm};
         font-family: 'Roboto';
       }
     }
@@ -39,6 +39,6 @@ export const Container = styled.div`
   }
 
   & + div {
-    margin-top: ${({ theme }) => theme.common.spacing.base};
+    margin-top: ${({ theme }) => theme.common?.spacing.base};
   }
 `

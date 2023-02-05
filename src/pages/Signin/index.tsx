@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import { Header, Input } from '@/components'
+import { Header, Input, Button } from '@/components'
 import { FiMail, FiLock } from 'react-icons/fi'
 
 export function SignIn() {
@@ -24,7 +24,9 @@ export function SignIn() {
               icon={<FiLock color="#ccc" />}
             />
           </S.FormFields>
-          <button> Acessar </button>
+          <Button type="submit" buttonType="danger">
+            <S.ButtonLabel>Acessar</S.ButtonLabel>
+          </Button>
         </S.Form>
       </S.Content>
     </S.Container>

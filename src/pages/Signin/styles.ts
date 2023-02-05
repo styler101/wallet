@@ -45,3 +45,9 @@ export const FormFields = styled.div`
   justify-content: center;
   margin: ${({ theme }) => theme.common.spacing.lg} 0;
 `
+
+export const ButtonLabel = styled.span`
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.common.size.lg};
+`

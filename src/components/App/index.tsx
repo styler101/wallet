@@ -1,11 +1,13 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
 import GlobalStyles from '@/assets/styles/global'
+import theme from '@/assets/themes'
 
 export function App() {
   return (
-    <React.Fragment>
+    <ThemeProvider theme={theme.dark}>
       <h1> Teste Import</h1>
       <GlobalStyles />
-    </React.Fragment>
+    </ThemeProvider>
   )
 }

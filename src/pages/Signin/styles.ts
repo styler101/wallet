@@ -13,5 +13,26 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   width: 100%;
+  max-width: 25rem;
+`
+
+export const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: ${({ theme }) => theme.common.spacing?.base};
+  background-color: ${({ theme }) => theme.colors?.tertiary};
+  padding: ${({ theme }) => theme.common.spacing?.lg};
+  border-radius: ${({ theme }) => theme.common.spacing.xs};
+
+  strong {
+    font-size: ${({ theme }) => theme.common.size['2xl']};
+    color: ${({ theme }) => theme.colors.white};
+    border-bottom: 6px solid ${({ theme }) => theme.colors.warning};
+    max-width: 4.15rem;
+    padding-bottom: 0.25rem;
+  }
 `

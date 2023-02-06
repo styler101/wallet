@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 type Props = {
   buttonType: 'success' | 'danger'
@@ -11,13 +11,18 @@ export const Container = styled.button<Props>`
   align-items: center;
   justify-content: center;
   border: 0;
-  border-radius: ${({ theme }) => theme.common.spacing.xs};
+  border-radius: ${({ theme }) => theme.common?.spacing.xs};
   background-color: ${(props) =>
     props.buttonType === 'success'
-      ? props.theme.colors.primary
-      : props.theme.colors.warning};
+      ? props.theme.colors?.primary
+      : props.theme.colors?.warning};
 
   &:hover {
     opacity: 0.9;
+  }
+  &:disabled {
+    background-color: #a3a0a0 !important;
+    opacity: 1;
+    cursor: not-allowed;
   }
 `

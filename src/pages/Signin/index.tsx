@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as S from './styles'
-import { Header, Input, Button } from '@/components'
+import { Header } from '@/components/Header'
+import { Button, Input } from '@/components/Form'
 import { FiMail, FiLock } from 'react-icons/fi'
 
 export function SignIn() {
+  const [formState, setFormState] = useState({
+    isLoading: true
+  })
   return (
     <S.Container>
       <S.Content>
@@ -24,7 +28,11 @@ export function SignIn() {
               icon={<FiLock color="#ccc" />}
             />
           </S.FormFields>
-          <Button type="submit" buttonType="danger">
+          <Button
+            type="submit"
+            buttonType="danger"
+            disabled={formState.isLoading}
+          >
             <S.ButtonLabel>Acessar</S.ButtonLabel>
           </Button>
         </S.Form>

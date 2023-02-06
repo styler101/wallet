@@ -14,6 +14,7 @@ export const Container = styled.div`
   div {
     width: 100%;
     position: relative;
+
     input {
       width: 100%;
       flex-grow: 1;
@@ -28,6 +29,10 @@ export const Container = styled.div`
         color: ${({ theme }) => theme.colors?.gray};
         font-size: ${({ theme }) => theme.common?.size.sm};
         font-family: 'Roboto';
+      }
+
+      &:focus {
+        border: 2px solid ${({ theme }) => theme.colors.info};
       }
     }
 

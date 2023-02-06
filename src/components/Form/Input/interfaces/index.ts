@@ -5,4 +5,6 @@ export interface InputProps
   > {
   label?: string
   icon?: JSX.Element
+  name: string
+  register?: any
 }

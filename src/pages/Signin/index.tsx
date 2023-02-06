@@ -32,6 +32,7 @@ export function SignIn() {
             type="submit"
             buttonType="danger"
             disabled={formState.isLoading}
+            data-testid="submit-button"
           >
             <S.ButtonLabel>Acessar</S.ButtonLabel>
           </Button>

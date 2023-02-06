@@ -1,6 +1,6 @@
 import React from 'react'
-import { type HeaderProps } from './interfaces'
 import * as S from './styles'
+import { type HeaderProps } from '../interfaces'
 import { FiDollarSign } from 'react-icons/fi'
 
 export function Header(props: HeaderProps) {

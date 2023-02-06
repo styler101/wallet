@@ -1,2 +1,2 @@
-export * from './Button'
-export * from './Input'
+export * from './Button/ui'
+export * from './Input/ui'

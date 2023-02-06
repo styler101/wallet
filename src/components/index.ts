@@ -1,2 +1,2 @@
 export * from './App'
-export * from './Header'
+export * from './Header/ui'

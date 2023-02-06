@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import { type InputProps } from './interfaces'
+import { type InputProps } from '../interfaces'
 
 export function Input(props: InputProps) {
   const { label, icon, ...rest } = props

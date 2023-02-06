@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as S from './styles'
-import { Header } from '@/components/Header'
+import { Header } from '@/components'
 import { Button, Input } from '@/components/Form'
 import { FiMail, FiLock } from 'react-icons/fi'
 

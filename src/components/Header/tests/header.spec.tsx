@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '.'
+import { Header } from '../ui'
 import { render, screen } from '@testing-library/react'
 
 describe('Header Component', () => {

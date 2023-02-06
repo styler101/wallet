@@ -1,5 +1,5 @@
 import React from 'react'
-import { type ButtonProps } from './interfaces'
+import { type ButtonProps } from '../interfaces'
 import * as S from './styles'
 
 export function Button(props: ButtonProps) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SignIn } from '@/pages/Signin'
+import { SignIn } from '@/pages/Signin/ui'
 import GlobalStyles from '@/assets/styles/global'
 import theme from '@/assets/themes'
 import { ThemeProvider } from 'styled-components'

@@ -19,7 +19,7 @@ export function SignIn() {
     mode: 'onBlur'
   })
   const [formState, setFormState] = useState({
-    isLoading: true
+    isLoading: false
   })
 
   const onSubmit = async (data: SignInFields) => {

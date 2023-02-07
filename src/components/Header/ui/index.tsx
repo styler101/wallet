@@ -4,9 +4,9 @@ import { type HeaderProps } from '../interfaces'
 import { FiDollarSign } from 'react-icons/fi'
 
 export function Header(props: HeaderProps) {
-  const { iconSize } = props
+  const { iconSize, hasAnimation } = props
   return (
-    <S.Container>
+    <S.Container hasAnimation={hasAnimation}>
       <div>
         <FiDollarSign size={iconSize} />
       </div>

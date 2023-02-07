@@ -3,9 +3,9 @@ import * as S from './styles'
 import { type InputProps } from '../interfaces'
 
 export function Input(props: InputProps) {
-  const { label, icon, register, name, ...rest } = props
+  const { label, icon, register, name, error, ...rest } = props
   return (
-    <S.Container>
+    <S.Container error={error}>
       {label !== null && <label> {label}</label>}
       <div>
         {icon !== null && icon}

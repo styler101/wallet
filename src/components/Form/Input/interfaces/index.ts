@@ -7,4 +7,5 @@ export interface InputProps
   icon?: JSX.Element
   name: string
   register?: any
+  error: boolean
 }

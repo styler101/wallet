@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { shadeDown, shadeLeft } from '@/shared/animations'
 
 export const Container = styled.div`
   width: 100%;
@@ -14,9 +15,9 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   max-width: 25rem;
+  animation: ${shadeDown} 0.8s ease-in;
 `
 
 export const Form = styled.form`

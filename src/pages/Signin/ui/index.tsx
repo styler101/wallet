@@ -11,20 +11,19 @@ import { schema } from '../schema'
 export function SignIn() {
   const {
     register,
-    formState: { errors, isValid, isValidating }
+    formState: { errors, isValid }
   } = useForm<SignInFields>({
     resolver: zodResolver(schema()),
     mode: 'onBlur'
   })
   const [formState, setFormState] = useState({
-    isLoading: true
+    isLoading: false
   })
 
-  console.log(errors)
   return (
     <S.Container>
       <S.Content>
-        <Header iconSize={18} />
+        <Header iconSize={18} hasAnimation={true} />
         <S.Form>
           <strong> Entrar</strong>
           <S.FormFields>
@@ -32,9 +31,10 @@ export function SignIn() {
               type="email"
               label="E-mail"
               placeholder="Informe seu email"
-              icon={<FiMail color="#ccc" />}
+              icon={<FiMail />}
               register={register}
               name="email"
+              error={!!(errors && errors.email)}
             />
             {errors.email != null && errors?.email?.message && (
               <ErrorField message={String(errors.email.message)} />
@@ -43,9 +43,10 @@ export function SignIn() {
               type="password"
               label="Senha"
               placeholder="Informe sua senha"
-              icon={<FiLock color="#ccc" />}
+              icon={<FiLock />}
               register={register}
               name="password"
+              error={!!(errors && errors.password)}
             />
             {errors.password != null && errors?.password?.message && (
               <ErrorField message={String(errors.password.message)} />
@@ -54,7 +55,7 @@ export function SignIn() {
           <Button
             type="submit"
             buttonType="danger"
-            disabled={formState.isLoading}
+            disabled={formState.isLoading || !isValid}
             data-testid="submit-button"
           >
             <S.ButtonLabel>Acessar</S.ButtonLabel>

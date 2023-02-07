@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { type SignInFields } from '../interfaces'
 import * as S from './styles'
-import { Header } from '@/components'
-import { Button, Input, ErrorField } from '@/components/Form'
+import signInService from '../services'
+import { type SignInFields } from '../interfaces'
+import { schema } from '../schema'
+import { Header, Button, ErrorField, Input } from '@/components'
 import { FiMail, FiLock } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { schema } from '../schema'
 
 export function SignIn() {
   const {
@@ -20,6 +20,12 @@ export function SignIn() {
     isLoading: false
   })
 
+  const onSubmit = (data: SignInFields) => {
+    setFormState((prev) => {
+      prev.isLoading = true
+      return { ...prev }
+    })
+  }
   return (
     <S.Container>
       <S.Content>

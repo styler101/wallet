@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header } from '../ui'
-import { render, type RenderResult } from '@testing-library/react'
+import { render, type RenderResult, fireEvent } from '@testing-library/react'
 
 type SutTypes = {
   sut: RenderResult

@@ -1,9 +1,24 @@
-import React, { type HTMLAttributes } from 'react'
+import React from 'react'
+import { isValidEmail } from '@/utitls/validators'
 import { SignIn } from '../ui'
-import { render, type RenderResult } from '@testing-library/react'
+import { render, type RenderResult, fireEvent } from '@testing-library/react'
 
 type SutTypes = {
   sut: RenderResult
+}
+
+type AuthenticationParams = {
+  email: string
+  password: string
+}
+type Authtencation = {
+  handler: (params: AuthenticationParams) => any
+}
+
+class SignInControllerStub implements Authtencation {
+  handler(params: AuthenticationParams): any {
+    return ''
+  }
 }
 
 const makeSut = (): SutTypes => {
@@ -27,5 +42,12 @@ describe('Signin Component', () => {
       /informe sua senha/i
     ) as HTMLInputElement
     expect(password.value).toBe('')
+  })
+
+  test('ensure signin handler recieve correct email', () => {
+    const { sut } = makeSut()
+    const inputEmail = sut.getByTestId('data-testIdemail') as HTMLInputElement
+    fireEvent.change(inputEmail, { target: { value: 'any_mail@mail.com' } })
+    expect(isValidEmail(inputEmail.value)).toBe(true)
   })
 })

@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { type HTMLAttributes } from 'react'
 import { SignIn } from '../ui'
-
 import { render, screen } from '@testing-library/react'
 
-describe('SignIn Component', () => {
-  test('ensure signin component start with initial state', () => {
+describe('Signin Component', () => {
+  test('Should start signin state with default values', () => {
     render(<SignIn />)
-    const submitedButton = screen.getByRole('button', {
+    const button = screen.getByRole('button', {
       name: /acessar/i
     }) as HTMLButtonElement
-    expect(submitedButton.disabled).toBe(true)
+    expect(button.disabled).toBe(true)
+    const email = screen.getByPlaceholderText(
+      /informe seu email/i
+    ) as HTMLInputElement
+    expect(email.value).toBe('')
+    const password = screen.getByPlaceholderText(
+      /informe sua senha/i
+    ) as HTMLInputElement
+    expect(password.value).toBe('')
   })
 })

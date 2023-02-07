@@ -33,7 +33,16 @@ describe('Signin Component', () => {
   test('ensure signin handler recieve correct email', () => {
     const { sut } = makeSut()
     const inputEmail = sut.getByTestId('data-testIdemail') as HTMLInputElement
-    fireEvent.change(inputEmail, { target: { value: 'any_mail' } })
+    fireEvent.change(inputEmail, { target: { value: 'any_mail@mail.com' } })
     expect(isValidEmail(inputEmail.value)).toBe(true)
+  })
+
+  test('ensure signin handler recieve a password', () => {
+    const { sut } = makeSut()
+    const inputPassword = sut.getByTestId(
+      'data-testIdpassword'
+    ) as HTMLInputElement
+    fireEvent.change(inputPassword, { target: { value: 'any_password' } })
+    expect(inputPassword.value.length).toBeGreaterThan(0)
   })
 })

@@ -7,20 +7,6 @@ type SutTypes = {
   sut: RenderResult
 }
 
-type AuthenticationParams = {
-  email: string
-  password: string
-}
-type Authtencation = {
-  handler: (params: AuthenticationParams) => any
-}
-
-class SignInControllerStub implements Authtencation {
-  handler(params: AuthenticationParams): any {
-    return ''
-  }
-}
-
 const makeSut = (): SutTypes => {
   return {
     sut: render(<SignIn />)
@@ -47,7 +33,7 @@ describe('Signin Component', () => {
   test('ensure signin handler recieve correct email', () => {
     const { sut } = makeSut()
     const inputEmail = sut.getByTestId('data-testIdemail') as HTMLInputElement
-    fireEvent.change(inputEmail, { target: { value: 'any_mail@mail.com' } })
+    fireEvent.change(inputEmail, { target: { value: 'any_mail' } })
     expect(isValidEmail(inputEmail.value)).toBe(true)
   })
 })

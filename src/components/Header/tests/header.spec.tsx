@@ -7,7 +7,7 @@ describe('Header Component', () => {
     const fakeProps = {
       iconSize: 18
     }
-    render(<Header iconSize={fakeProps.iconSize} />)
+    render(<Header iconSize={fakeProps.iconSize} hasAnimation={false} />)
     expect(fakeProps.iconSize).toBe(18)
   })
 
@@ -15,7 +15,7 @@ describe('Header Component', () => {
     const fakeProps = {
       iconSize: 18
     }
-    render(<Header iconSize={fakeProps.iconSize} />)
+    render(<Header iconSize={fakeProps.iconSize} hasAnimation={false} />)
     const heading = screen.getByRole('heading', { level: 4 })
     expect(heading.innerHTML).toEqual(' Minha Carteira')
   })

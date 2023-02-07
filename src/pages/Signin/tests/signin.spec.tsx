@@ -37,7 +37,7 @@ describe('Signin Component', () => {
     expect(isValidEmail(inputEmail.value)).toBe(true)
   })
 
-  test('ensure signin handler recieve a password', () => {
+  test('ensure signin handler recieve a correct password', () => {
     const { sut } = makeSut()
     const inputPassword = sut.getByTestId(
       'data-testIdpassword'

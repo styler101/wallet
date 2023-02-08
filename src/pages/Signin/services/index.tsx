@@ -5,6 +5,7 @@ import {
 } from '../interfaces'
 import { delay } from '@/utitls/timer'
 import { generateId } from '@/utitls/validators'
+import { InvalidParamError } from '@/errors/http/invalid-param'
 
 export class SignInService implements Authentication {
   async authentication({
@@ -16,14 +17,14 @@ export class SignInService implements Authentication {
       const fields = [email, password]
       for (const key in fields) {
         if (fields[key] === '') {
-          throw new Error(`Invalid Field ${fields[key]}`)
+          throw new InvalidParamError(`Invalid Field ${fields[key]}`, 400)
         }
       }
       return {
         accessToken: generateId()
       }
     } catch (error) {
-      throw new Error('Invalid Request')
+      throw new InvalidParamError('Internal server error', 500)
     }
   }
 }

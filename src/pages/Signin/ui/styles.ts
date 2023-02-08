@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { shadeDown, shadeLeft } from '@/shared/animations'
-
+import { shadeDown } from '@/shared/animations'
+import { shade } from 'polished'
 export const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -51,4 +51,21 @@ export const ButtonLabel = styled.span`
   font-weight: bold;
   color: ${({ theme }) => theme.colors?.white};
   font-size: ${({ theme }) => theme.common?.size.lg};
+`
+
+export const SignUpLink = styled.span`
+  margin-top: ${({ theme }) => theme.common.spacing?.lg};
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors?.white};
+  svg {
+    margin-right: ${({ theme }) => theme.common.spacing.sm};
+  }
+
+  &:hover {
+    color: ${shade(0.2, '#fff')};
+  }
 `

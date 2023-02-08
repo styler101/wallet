@@ -5,11 +5,13 @@ import { type SignInFields } from '../interfaces'
 import { schema } from '../schema'
 import { delay } from '@/utitls/timer'
 import { Header, Button, ErrorField, Input } from '@/components'
-import { FiMail, FiLock } from 'react-icons/fi'
+import { FiMail, FiLock, FiLogIn } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function SignIn() {
+  const [loading, setLoading] = useState<boolean>(false)
+
   const {
     register,
     handleSubmit,
@@ -18,27 +20,19 @@ export function SignIn() {
     resolver: zodResolver(schema()),
     mode: 'onBlur'
   })
-  const [formState, setFormState] = useState({
-    isLoading: false
-  })
 
   const onSubmit = async (data: SignInFields) => {
-    setFormState((prev) => {
-      prev.isLoading = true
-      return { ...prev }
-    })
+    setLoading(true)
     try {
       await delay(2000)
-      await signInService.authentication({
+      const { accessToken } = await signInService.authentication({
         email: data.email,
         password: data.password
       })
     } catch (error) {
+      console.log(error)
     } finally {
-      setFormState((prev) => {
-        prev.isLoading = false
-        return { ...prev }
-      })
+      setLoading(false)
     }
   }
   return (
@@ -72,13 +66,17 @@ export function SignIn() {
             {errors.password != null && errors?.password?.message && (
               <ErrorField message={String(errors.password.message)} />
             )}
+            <S.SignUpLink>
+              <FiLogIn size={18} />
+              Criar Conta
+            </S.SignUpLink>
           </S.FormFields>
           <Button
             type="submit"
             buttonType="danger"
-            disabled={formState.isLoading || !isValid}
+            disabled={loading || !isValid}
             data-testid="submit-button"
-            loading={formState.isLoading}
+            loading={loading}
           >
             <S.ButtonLabel>Acessar</S.ButtonLabel>
           </Button>

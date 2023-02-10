@@ -54,7 +54,7 @@ export const ButtonLabel = styled.span`
 `
 
 export const SignUpLink = styled.span`
-  margin-top: ${({ theme }) => theme.common.spacing?.lg};
+  margin-top: ${({ theme }) => theme.common?.spacing?.lg};
   width: 100%;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@ export const SignUpLink = styled.span`
   cursor: pointer;
   color: ${({ theme }) => theme.colors?.white};
   svg {
-    margin-right: ${({ theme }) => theme.common.spacing.sm};
+    margin-right: ${({ theme }) => theme.common?.spacing.sm};
   }
 
   &:hover {

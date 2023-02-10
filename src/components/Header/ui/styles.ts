@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { shadeLeft } from '@/shared/animations'
 
-export const Container = styled.div`
+type Props = {
+  hasAnimation: boolean
+}
+export const Container = styled.div<Props>`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -23,4 +27,9 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.colors?.white};
     opacity: 0.8;
   }
+  ${(props) =>
+    props.hasAnimation &&
+    css`
+      animation: ${shadeLeft} 3s ease-in;
+    `}
 `

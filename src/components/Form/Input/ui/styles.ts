@@ -1,6 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
+type Props = {
+  error: boolean
+}
+export const Container = styled.div<Props>`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,6 +17,7 @@ export const Container = styled.div`
   div {
     width: 100%;
     position: relative;
+
     input {
       width: 100%;
       flex-grow: 1;
@@ -35,10 +39,26 @@ export const Container = styled.div`
       position: absolute;
       top: 14px;
       left: 8px;
+      color: #ccc;
     }
   }
 
   & + div {
     margin-top: ${({ theme }) => theme.common?.spacing.base};
   }
+
+  ${(props) =>
+    props.error &&
+    css`
+      label {
+        color: ${({ theme }) => theme.colors?.warning};
+      }
+      input {
+        border: 2px solid ${({ theme }) => theme.colors?.warning} !important;
+      }
+
+      svg {
+        color: ${({ theme }) => theme.colors?.warning} !important;
+      }
+    `}
 `

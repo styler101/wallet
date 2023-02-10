@@ -4,4 +4,5 @@ export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     PropsWithChildren {
   buttonType: 'success' | 'danger'
+  loading: boolean
 }

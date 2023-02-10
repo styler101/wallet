@@ -4,8 +4,10 @@ const schema = () => {
   return z.object({
     email: z
       .string({ required_error: 'E-mail Obrigatório' })
-      .email('Por valor informe um email váliado'),
-    password: z.string({ required_error: 'Senha Obrigatóra' })
+      .email('Por favor informe um email válido'),
+    password: z
+      .string({ required_error: 'Senha Obrigatóra' })
+      .min(1, { message: 'O campo senha não pode ser vazio' })
   })
 }
 

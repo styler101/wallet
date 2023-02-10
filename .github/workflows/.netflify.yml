@@ -1,8 +1,12 @@
 # .github/workflows/netlify.yml
 name: mywallet
 on:
-  push: main
-  pull_request: ["develop"]
+ push:
+  branchs:
+   - main
+ pull_request:
+   branchs:
+    - develop
 jobs:
   build:
     runs-on: ubuntu-18.04

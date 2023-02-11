@@ -3,8 +3,8 @@ import {
   type Authentication,
   type AccountModel
 } from '../interfaces'
-import { delay } from '@/utitls/timer'
-import { generateId } from '@/utitls/validators'
+import { delay } from '@/utils/timer'
+import { generateId } from '@/utils/validators'
 import { InvalidParamError } from '@/errors/http/invalid-param'
 
 export class SignInService implements Authentication {

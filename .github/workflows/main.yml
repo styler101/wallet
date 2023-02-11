@@ -14,7 +14,6 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Deploy to Netlify
-        uses: styler101/wallet
         with:
           publish-dir: './dist'
           production-branch: main

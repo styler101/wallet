@@ -1,5 +1,5 @@
 import React from 'react'
-import { isValidEmail } from '@/utitls/validators'
+import { isValidEmail } from '@/utils/validators'
 import { SignIn } from '../ui'
 import { render, type RenderResult, fireEvent } from '@testing-library/react'
 

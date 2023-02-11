@@ -9,6 +9,7 @@ export function Routes() {
     <Switch>
       <Route path="/404" element={<Error404 />} />
       <Route path="*" element={<Navigate to="/404" replace />} />
+      <Route path="/*" element={<Error404 />} />
       <Route element={<SignIn />} index />
       <Route path="/signup" element={<SignUp />} />
     </Switch>

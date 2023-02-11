@@ -12,7 +12,7 @@ jobs:
       # ( Build to ./dist or other directory... )
 
       - name: Deploy to Netlify 🚀
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           publish-dir: './dist'
           production-branch: main

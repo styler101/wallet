@@ -6,7 +6,7 @@ import { Error404 } from '@/pages/Error404/ui'
 export function Routes() {
   return (
     <Switch>
-      <Route path="*" element={<Error404 />} />
+      <Route path="/*" element={<Error404 />} />
       <Route element={<SignIn />} index />
     </Switch>
   )

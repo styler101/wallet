@@ -6,10 +6,12 @@ import { schema } from '../schema'
 import { delay } from '@/utils/timer'
 import { Header, Button, ErrorField, Input } from '@/components'
 import { FiMail, FiLock, FiLogIn } from 'react-icons/fi'
+import { useNavigate, Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function SignIn() {
+  const navigate = useNavigate()
   const [loading, setLoading] = useState<boolean>(false)
 
   const {
@@ -66,10 +68,12 @@ export function SignIn() {
             {errors.password != null && errors?.password?.message && (
               <ErrorField message={String(errors.password.message)} />
             )}
-            <S.SignUpLink>
-              <FiLogIn size={18} />
-              Criar Conta
-            </S.SignUpLink>
+            <Link to="/signup">
+              <S.SignUpLink>
+                <FiLogIn size={18} />
+                Criar Conta
+              </S.SignUpLink>
+            </Link>
           </S.FormFields>
           <Button
             type="submit"
